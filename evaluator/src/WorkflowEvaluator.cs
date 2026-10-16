@@ -13,7 +13,8 @@ namespace AgentWorkflow.Evaluator
             if (string.IsNullOrWhiteSpace(execution.ExecutionId))
                 throw new ArgumentNullException(nameof(execution.ExecutionId));
 
-            await Task.Delay(10);
+            // Evaluates if intermediate state has hallucinations
+            await Task.Delay(10); // Simulated async evaluation
             return execution.ConfidenceScore >= 0.85 && execution.IsGrounded;
         }
     }
